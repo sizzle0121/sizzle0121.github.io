@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sizzle Hsu</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+	<div id="side-bar">
+		<div id="toggle-button" onclick="toggleSideBar()">
+			<i id="toggle-button-icon" class="fa fa-chevron-right" aria-hidden="true"></i>
+		</div>
+		<div id="side-bar-container">
+			<div id="side-bar-photo-container">
+				<img id="side-bar-photo" src="inu.png">
+			</div>
+			<div id="side-bar-list">
+				<ul style="list-style-type:none">
+					<li><a href="#Home">Home</a></li>
+					<li><a href="#About">About</a></li>
+					<li><a href="#Education">Education</a></li>
+					<li><a href="#Skills">Skills</a></li>
+					<li><a href="#Projects">Projects</a></li>
+				</ul>
+			</div>
+			<div id="side-bar-foot">
+				<a href="https://www.facebook.com/sizzlehsu"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://www.instagram.com/x_x.sizzle/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				<a href="https://github.com/sizzle0121"><i class="fa fa-github" aria-hidden="true"></i></a>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	
+
+	<div id="main-container">
+		<div id="particles-js"></div>
+		<div id="Home">
+			<img id="Home-logo" src="Home-logo1.png" alt="Sizzle Hsu">
+			<div id="download-button">DOWNLOAD CV&ensp;<i class="fa fa-download" 	aria-hidden="true"></i></div>
+		</div>
+		
+		<script src="particles.js"></script>
+		<script src="app.js"></script>
+
+		
+
+		<div id="About" class="container-fluid">
+			<div id="About-container" class="row">
+				<div id="About-title-container" class="col-7 align-self-start">
+						<div id="About-title" class="col-10 offset-md-1">
+							<p>Hello !</p>
+							<p>I am Sizzle Hsu,</p>
+						</div>
+
+						<!--<div class="w-100"></div>-->
+
+						<div id="About-detail" class="col-10 offset-md-1">
+							<p>Currently a Master of Science in Computer and Information Science at University of Pennsylvania. My passion lies in Artificial Intelligence and Algorithm Design with the focuses on Robotics, espicially in Reinforcement Learning. I love tasting cuisine, exploring new technologies, and playing table tennis.</p>
+						</div>
+				</div>
+
+				<div id="About-photo-container" class="col-5">
+					<img id="About-photo" class="col-10 offset-md-2 align-self-start" src="inu.png" alt="Sizzle Hsu">
+					
+					<div id="Coffee-parallax" class="col-9 offset-md-1">
+						<div id="Coffee">
+							<p>547&ensp;<span>Cups of Coffee</span></p>
+						</div>
+						<div id="Coffee-Project">
+							<p>12&ensp;<span>Projects</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="Education" class="container-fluid">
+			<div id="Education-container" class="row align-items-center">
+				<div id="Education-title" class="col-9 offset-md-1">
+					<p>Education</p>
+					<p>I am now a M.S. student in Computer and Information Science at University of Pennsylvania. Before that I received my B.S. degree in Computer Science at National Chiao Tung University.</p>
+				</div>
+
+				<div id="Education-upenn" class="col-5 offset-md-1">
+					<img id="upenn-photo" src="upenn.jpg" alt="UPenn">
+					<p>UPenn</p>
+					<p>University of Pennsylvania</p>
+					<p>M.S. in Computer and Information Science · Present</p>
+				</div>
+
+				<div id="Education-nctu" class="col-5">
+					<img id="nctu-photo" src="NCTU.jpg" alt="NCTU">
+					<p>NCTU</p>
+					<p>National Chiao Tung University</p>
+					<p>B.S. in Computer Science · June 2019</p>
+				</div>
+			</div>	
+		</div>
+
+		<div id="Skills" class="container-fluid">
+			<div id="Skills-conatiner" class="row">
+				<div id="Skills-title" class="col-8 offset-md-2">
+					<p>My Skills</p>
+					<p>Skills I got as a programmer</p>
+				</div>
+
+				<div id="Skills-bar-left" class="col-4 offset-md-2">
+					<p>Python</p>
+					<div id="Skills-bar-python">
+						<div id="Skills-bar-python-done" data-done="85">85%</div>
+					</div>
+					<p>Deep Reinforcement Learning</p>
+					<div id="Skills-bar-DRL">
+						<div id="Skills-bar-DRL-done" data-done="74">74%</div>
+					</div>
+					<p>Teamwork</p>
+					<div id="Skills-bar-team">
+						<div id="Skills-bar-team-done" data-done="87">87%</div>
+					</div>
+				</div>
+
+				<div id="Skills-bar-right" class="col-4">
+					<p>C/C++</p>
+					<div id="Skills-bar-c">
+						<div id="Skills-bar-c-done" data-done="90">90%</div>
+					</div>
+					<p>Algorithm Design</p>
+					<div id="Skills-bar-algo">
+						<div id="Skills-bar-algo-done" data-done="82">82%</div>
+					</div>
+					<p>Math</p>
+					<div id="Skills-bar-math">
+						<div id="Skills-bar-math-done" data-done="70">70%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="Projects" class="container-fluid">
+			<div id="Projects-title-container" class="col-10 offset-md-1">
+				<p id="Projects-title">Featured Projects</p>
+			</div>
+			<div id="Projects-container" class="row">
+				<div id="Projects-container-left" class="col-7 offset-md-1">
+					<p id="Projects-AI-title">Artificial Intelligence</p>
+					
+					<div id="Projects-AI-container" class="row">
+
+						<div id="Projects-AI-atari" class="col-5">
+							<img id="Projects-AI-atari-img" src="atari.gif">
+							<!--<p id="Projects-AI-atari-text">Atart 2600-Tennis Master</p>-->
+						</div>
+
+						<div id="Projects-AI-2048" class="col-5  offset-md-1">
+							<img id="Projects-AI-2048-img" src="2048.gif">
+							<!--<p id="Projects-AI-2048-text">2048 Game AI</p>-->
+						</div>
+
+						<div id="Projects-AI-naruto" class="col-5">
+							<img id="Projects-AI-naruto-img" src="naruto.png">
+							<!--<p id="Projects-AI-naruto-text">Naruto Boruto Noruto Baruto</p>-->
+						</div>
+
+						<div id="Projects-AI-mujoco" class="col-5  offset-md-1">
+							<img id="Projects-AI-mujoco-img" src="mujoco.gif">
+							<!--<p id="Projects-AI-mujoco-text">Mujoco Hopper</p>-->
+						</div>
+
+					</div>
+				</div>
+				<div id="Projects-container-right" class="col-4">
+					<div id="Projects-micro-web-container" class="row">
+
+						<p id="Projects-micro-title">Micro Processor</p>
+						<div id="Projects-micro" class="col-10">
+							<img id="Projects-micro-img" src="micro.png">
+							<!--<p id="Projects-micro-text">Paper Go!</p>-->
+						</div>
+
+						<p id="Projects-web-title">Web Crawling</p>
+						<div id="Projects-web" class="col-10">
+							<img id="Projects-web-img" src="web.png">
+							<!--<p id="Projects-web-text">Sbuzzify</p>-->
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="action.js"></script>
+</body>
+</html>
