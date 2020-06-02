@@ -54,3 +54,12 @@ function toggleSideBar(){
 		document.querySelector('#toggle-button-icon').classList.add('fa-chevron-right');
 	}
 }
+
+history.scrollRestoration = "manual";
+window.onbeforeunload = function () {
+	document.querySelector('html').style.scrollBehavior = '';
+ 	window.scrollTo(0, 0);
+ 	document.querySelector('html').style.scrollBehavior = 'smooth';
+}
+
+
