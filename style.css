@@ -368,7 +368,7 @@ canvas {
 #Skills-title p:nth-of-type(2) {
 	font-size: 1.2em;
 	text-align: justify;
-	color: #FFD306;
+	color: #fff;
 }
 
 #Skills-bar-left p{
@@ -528,6 +528,28 @@ canvas {
 	transition: 1s ease;
 }
 
+#Skills-wall {
+	height: 3vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 2%;
+	padding: 0;
+}
+#Skills-wall div {
+	text-align: center;
+	text-decoration: none;
+	background-color: #003060;
+	color: #fff;
+	border: 2px solid #EAC100;
+	border-radius: 1.5em;
+	font-size: 1em;
+	padding: .5em .8em .5em .8em;
+	margin: 0 1% 1% 0;
+}
+
+
 
 
 
@@ -570,54 +592,47 @@ canvas {
 	font-weight: 500;
 }
 
+/*Projects Contents - left*/
 #Projects-AI-atari {
 	padding: 0;
 	height: 40%;
-	width: 25%;
-	
 	font-size: 1em;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
-
 #Projects-AI-2048 {
 	padding: 0;
 	height: 40%;
-	width: 25%;
-	
 	font-size: 1em;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
-
 #Projects-AI-naruto {
 	padding: 0;
 	height: 40%;
-	width: 25%;
-	
 	font-size: 1em;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
-
 #Projects-AI-mujoco {
 	padding: 0;
 	height: 40%;
-	width: 25%;
-	
 	font-size: 1em;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
-
 
 #Projects-container-left img {
 	width: auto;
@@ -627,6 +642,86 @@ canvas {
 	border: 5px solid #6C6C6C;
 	border-radius: .5em;
 }
+
+/*Projects Contents - left - overlay*/
+
+#Projects-AI-atari #Projects-AI-atari-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #6C6C6C;
+	font-size: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity .5 ease;
+}
+#Projects-AI-atari:hover #Projects-AI-atari-overlay {
+	opacity: 0.5;
+}
+
+#Projects-AI-2048 #Projects-AI-2048-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #6C6C6C;
+	font-size: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity .5 ease;
+}
+#Projects-AI-2048:hover #Projects-AI-2048-overlay {
+	opacity: 0.5;
+}
+
+#Projects-AI-naruto #Projects-AI-naruto-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #6C6C6C;
+	font-size: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity .5 ease;
+}
+#Projects-AI-naruto:hover #Projects-AI-naruto-overlay {
+	opacity: 0.5;
+}
+
+#Projects-AI-mujoco #Projects-AI-mujoco-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #6C6C6C;
+	font-size: 1.8em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity .5 ease;
+}
+#Projects-AI-mujoco:hover #Projects-AI-mujoco-overlay {
+	opacity: 0.5;
+}
+
+/*Projects Contents - right*/
 
 #Projects-container-right {
 	height: 100%;
@@ -659,6 +754,7 @@ canvas {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
 #Projects-web {
@@ -670,6 +766,7 @@ canvas {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
 #Projects-container-right img {
@@ -681,6 +778,55 @@ canvas {
 	border-radius: .5em;
 }
 
+/*Projects Contents - right - overlay*/
+#Projects-micro #Projects-micro-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #6C6C6C;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity .5 ease;
+}
+#Projects-micro #Projects-micro-overlay p:nth-of-type(1){
+	font-size: 1.8em;
+}
+#Projects-micro #Projects-micro-overlay p:nth-of-type(2){
+	font-size: 1.2em;
+}
+#Projects-micro:hover #Projects-micro-overlay {
+	opacity: 0.5;
+}
+#Projects-web #Projects-web-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #6C6C6C;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity .5 ease;
+}
+#Projects-web #Projects-web-overlay p:nth-of-type(1){
+	font-size: 1.8em;
+}
+#Projects-web #Projects-web-overlay p:nth-of-type(2){
+	font-size: 1.2em;
+}
+#Projects-web:hover #Projects-web-overlay {
+	opacity: 0.5;
+}
 
 
 
