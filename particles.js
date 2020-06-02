@@ -1516,8 +1516,15 @@ window.particlesJS = function(tag_id, params){
   if(canvas != null){
     pJSDom.push(new pJS(tag_id, params));
   }
-
 };
+
+window.particlesJSRemove = function(tag_id){
+  var canvas = document.getElementById(tag_id);
+  canvas.innerHTML = '';
+  delete pJSDom[0];
+  pJSDom = [];
+  console.log("Removed");
+}
 
 window.particlesJS.load = function(tag_id, path_config_json, callback){
 
