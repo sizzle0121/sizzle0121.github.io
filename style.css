@@ -4,11 +4,14 @@ html {
 
 body {
 	margin: 0;
-	
 }
 
 body::-webkit-scrollbar {
     display: none;
+}
+
+* p {
+	cursor: default;
 }
 
 #side-bar {
@@ -175,8 +178,19 @@ canvas {
 #download-button:hover {
 	background-color: #000;
 	color: #fff;
+	cursor:pointer;
 }
 
+#download-button a {
+	color: #000;
+	text-decoration: none;
+}
+
+#download-button a:hover {
+	background-color: #000;
+	color: #fff;
+	cursor:pointer;
+}
 
 
 
@@ -242,20 +256,21 @@ canvas {
 	background-size: cover;
 	text-align: center;
 	color: #fff;
+	//-webkit-transform: translatez(0);
+	will-change : transform;
 }
 
 #Coffee {
 	height: 50%;
 }
 
-#Coffee p{
+#counter{
 	font-size: 3em;
 	font-weight: 600;
 }
 
-
-#Coffee p span{
-	font-size: 0.4em;
+#unit {
+	font-size: 1.3em;
 	font-weight: 300;
 }
 
@@ -659,6 +674,7 @@ canvas {
 	align-items: center;
 	opacity: 0;
 	transition: opacity .5 ease;
+	cursor: default;
 }
 #Projects-AI-atari:hover #Projects-AI-atari-overlay {
 	opacity: 0.5;
@@ -678,6 +694,7 @@ canvas {
 	align-items: center;
 	opacity: 0;
 	transition: opacity .5 ease;
+	cursor: default;
 }
 #Projects-AI-2048:hover #Projects-AI-2048-overlay {
 	opacity: 0.5;
@@ -697,6 +714,7 @@ canvas {
 	align-items: center;
 	opacity: 0;
 	transition: opacity .5 ease;
+	cursor: default;
 }
 #Projects-AI-naruto:hover #Projects-AI-naruto-overlay {
 	opacity: 0.5;
@@ -716,6 +734,7 @@ canvas {
 	align-items: center;
 	opacity: 0;
 	transition: opacity .5 ease;
+	cursor: default;
 }
 #Projects-AI-mujoco:hover #Projects-AI-mujoco-overlay {
 	opacity: 0.5;
@@ -796,9 +815,11 @@ canvas {
 }
 #Projects-micro #Projects-micro-overlay p:nth-of-type(1){
 	font-size: 1.8em;
+	cursor: default;
 }
 #Projects-micro #Projects-micro-overlay p:nth-of-type(2){
 	font-size: 1.2em;
+	cursor: default;
 }
 #Projects-micro:hover #Projects-micro-overlay {
 	opacity: 0.5;
@@ -820,9 +841,11 @@ canvas {
 }
 #Projects-web #Projects-web-overlay p:nth-of-type(1){
 	font-size: 1.8em;
+	cursor: default;
 }
 #Projects-web #Projects-web-overlay p:nth-of-type(2){
 	font-size: 1.2em;
+	cursor: default;
 }
 #Projects-web:hover #Projects-web-overlay {
 	opacity: 0.5;
