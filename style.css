@@ -272,12 +272,12 @@ canvas {
 	height: 50%;
 }
 
-#counter{
+#counter-Coffee{
 	font-size: 3em;
 	font-weight: 600;
 }
 
-#unit {
+#unit-Coffee {
 	font-size: 1.3em;
 	font-weight: 300;
 }
@@ -286,13 +286,13 @@ canvas {
 	height: 50%;
 }
 
-#Coffee-Project p{
+#counter-Project{
 	font-size: 3em;
 	font-weight: 600;
 }
 
-#Coffee-Project p span{
-	font-size: 0.6em;
+#unit-Project{
+	font-size: 1.3em;
 	font-weight: 300;
 }
 

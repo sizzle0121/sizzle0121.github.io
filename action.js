@@ -1,5 +1,5 @@
 
-var counterReach = false;
+var counterCoffeeReach = false, counterProjectsReach = false;
 function SkillsEnter(){
 	var sec = document.getElementById("Skills");
 	var scrollY = window.pageYOffset;
@@ -26,15 +26,26 @@ function SkillsEnter(){
 		}, 1000);
 	}
 
-	if(scrollY > 0.6*scrollUnit && counterReach == false){
-		var i = 0;
-		var cnt = setInterval(function() {     
-			if(i < 547)
-				document.getElementById("counter").innerHTML = ++i;
-			else
-				clearInterval(cnt);
-		}, 5500 / 550);
-		counterReach = true;
+	if(scrollY > 0.6*scrollUnit){
+		var i = 0, j = 0;
+		if(counterCoffeeReach == false){
+			var cntCoffee = setInterval(function() {     
+				if(i < 547)
+					document.getElementById("counter-Coffee").innerHTML = ++i;
+				else
+					clearInterval(cntCoffee);
+			}, 5500 / 547);
+			counterCoffeeReach = true;
+		}
+		if(counterProjectsReach == false){
+			var cntProjects = setInterval(function() {     
+				if(j < 12)
+					document.getElementById("counter-Project").innerHTML = ++j;
+				else
+					clearInterval(cntProjects);
+			}, 5500 / 12);
+			counterProjectsReach = true;
+		}
 	}
 
 }
