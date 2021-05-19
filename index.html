@@ -1,245 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Sizzle Hsu</title>
-
-	<link rel="preload" href="img/brick.jpg" as="image">
-	<link rel="preload" href="img/atari.gif" as="image">
-	<link rel="preload" href="img/2048.gif" as="image">
-	<link rel="preload" href="img/mujoco.gif" as="image">
-	<link rel="preload" href="img/naruto.png" as="image">
-	<link rel="preload" href="img/micro.png" as="image">
-	<link rel="preload" href="img/web.png" as="image">
-	<link rel="preload" href="img/upenn.jpg" as="image">
-	<link rel="preload" href="img/NCTU.jpg" as="image">
-
-	<link rel="stylesheet" type="text/css" href="style.css"> 
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <meta charset="UTF-8">
+    <meta  name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>test test</title>
 </head>
 <body>
+    <div class="arrow"></div>
 
-	<div id="side-bar">
-		<div id="toggle-button" onclick="toggleSideBar()">
-			<i id="toggle-button-icon" class="fa fa-chevron-right" aria-hidden="true"></i>
-		</div>
-		<div id="side-bar-container">
-			<div id="side-bar-photo-container">
-				<img id="side-bar-photo" src="img/inu.png">
-			</div>
-			<div id="side-bar-list">
-				<ul style="list-style-type:none">
-					<li><a href="#Home">Home</a></li>
-					<li><a href="#About">About</a></li>
-					<li><a href="#Education">Education</a></li>
-					<li><a href="#Skills">Skills</a></li>
-					<li><a href="#Projects">Projects</a></li>
-				</ul>
-			</div>
-			<div id="side-bar-foot">
-				<a href="https://www.facebook.com/sizzlehsu"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				<a href="https://www.instagram.com/x_x.sizzle/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-				<a href="https://github.com/sizzle0121"><i class="fa fa-github" aria-hidden="true"></i></a>
-			</div>
-		</div>
+    <section class="Home">
+        <div id="bg-slider-container-home">
+            <p id="name-home">Sizzle Hsu</p>
+            <p id="role-home">ML Developer | System Engineer</p>
+        </div>
+    </section>
 
-	</div>
+    <section class="About">
+        <div id="cover-bg-about"></div>
+        <div id="right-bg"></div>
+        <img id="avatar" src="./assets/avatar.jpg">
+        <div id="intro"><p>🙋🏻‍♂️<br>I am currently a graduate student studying computer and information science at University of Pennsylvania. <br>🌟<br>My passion lies in Artificial Intelligence and Algorithm Design with the focuses on Robotics. To be more concise, I mainly research Reinforcement Learning in robotic control as well as algorithms for analyzing various sensors' data.<br>☕️<br>Out of work, I love doing workouts, tasting cuisine, and exploring new technologies.</p></div>
+        <div id="title">About</div>
+        <div id="interlude-about"></div>
+    </section>
 
-
-
-	
-
-	<div id="main-container">
-		<div id="particles-js"></div>
-		<div id="Home">
-			<img id="Home-logo" src="img/Home-logo1.png" alt="Sizzle Hsu" onclick="magic()">
-			<div id="download-button"><a href="img/inu.png" download>DOWNLOAD CV&ensp;<i class="fa fa-download" aria-hidden="true"></a></i></div>
-		</div>
-		
-		<script src="particles.js"></script>
-		<script src="app.js"></script>
-
-		
-
-		<div id="About" class="container-fluid">
-			<div id="About-container" class="row">
-				<div id="About-title-container" class="col-7 align-self-start">
-						<div id="About-title" class="col-10 offset-md-1">
-							<p>Hello !</p>
-							<p>I am Sizzle Hsu,</p>
-						</div>
-
-						<!--<div class="w-100"></div>-->
-
-						<div id="About-detail" class="col-10 offset-md-1">
-							<p>Currently a Master of Science in Computer and Information Science at University of Pennsylvania. My passion lies in Artificial Intelligence and Algorithm Design with the focuses on Robotics, espicially in Reinforcement Learning. I love tasting cuisine, exploring new technologies, and playing table tennis.</p>
-						</div>
-				</div>
-
-				<div id="About-photo-container" class="col-5">
-					<img id="About-photo" class="col-10 offset-md-2 align-self-start" src="img/inu.png" alt="Sizzle Hsu">
-					
-					<div id="Coffee-parallax" class="col-9 offset-md-1">
-						<div id="Coffee">
-							<p><span><span id="counter-Coffee"></span>&ensp;<span id="unit-Coffee">Cups of Coffee</span></p>
-						</div>
-						<div id="Coffee-Project">
-							<p><span><span id="counter-Project"></span>&ensp;<span id="unit-Project">Projects</span></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <section class="Experience">
+        <img id="bg-exp" src="./assets/bg2.jpg">
+        <div id="cover-bg-exp"></div>
+        <div id="left-bg-exp"></div>
+        <div id="content-exp"></div>
+        <div id="timeline-exp"></div>
+        <div id="title-exp">Experience</div>
+    </section>
 
 
-		<div id="Education" class="container-fluid">
-			<div id="Education-container" class="row align-items-center">
-				<div id="Education-title" class="col-9 offset-md-1">
-					<p>Education</p>
-					<p>I am now a M.S. student in Computer and Information Science at University of Pennsylvania. Before that I received my B.S. degree in Computer Science at National Chiao Tung University.</p>
-				</div>
+    <section>
+        <h1>Scroll Up</h1>
+    </section>
 
-				<div id="Education-upenn" class="col-5 offset-md-1">
-					<img id="upenn-photo" src="img/upenn.jpg" alt="UPenn">
-					<p>UPenn</p>
-					<p>University of Pennsylvania</p>
-					<p>M.S. in Computer and Information Science · Present</p>
-				</div>
-
-				<div id="Education-nctu" class="col-5">
-					<img id="nctu-photo" src="img/NCTU.jpg" alt="NCTU">
-					<p>NCTU</p>
-					<p>National Chiao Tung University</p>
-					<p>B.S. in Computer Science · June 2019</p>
-				</div>
-			</div>	
-		</div>
-
-		<div id="Skills" class="container-fluid">
-			<div id="Skills-conatiner" class="row">
-				<div id="Skills-title" class="col-8 offset-md-2">
-					<p>My Skills</p>
-					<p>Proficiency compared to each other of my skills</p>
-				</div>
-
-				<div id="Skills-bar-left" class="col-4 offset-md-2">
-					<p>Python</p>
-					<div id="Skills-bar-python">
-						<div id="Skills-bar-python-done" data-done="90">90%</div>
-					</div>
-					<p>Deep Reinforcement Learning</p>
-					<div id="Skills-bar-DRL">
-						<div id="Skills-bar-DRL-done" data-done="82">82%</div>
-					</div>
-					<p>Teamwork</p>
-					<div id="Skills-bar-team">
-						<div id="Skills-bar-team-done" data-done="87">87%</div>
-					</div>
-				</div>
-
-				<div id="Skills-bar-right" class="col-4">
-					<p>C/C++</p>
-					<div id="Skills-bar-c">
-						<div id="Skills-bar-c-done" data-done="95">95%</div>
-					</div>
-					<p>Algorithm Design</p>
-					<div id="Skills-bar-algo">
-						<div id="Skills-bar-algo-done" data-done="85">85%</div>
-					</div>
-					<p>Math</p>
-					<div id="Skills-bar-math">
-						<div id="Skills-bar-math-done" data-done="80">80%</div>
-					</div>
-				</div>
-
-				<div id="Skills-wall" class="col-6 offset-md-3">
-					<div>Deep Learning</div>
-					<div>Machine Learning</div>
-					<div>Pytorch</div>
-					<div>Web Crawling</div>
-					<div>Game Theory</div>
-					<div>Git</div>
-					<div>Assembly</div>
-					<div>MySQL</div>
-					<div>JavaScript</div>
-					<div>Html</div>
-					<div>CSS</div>
-					<div>JQuery</div>
-					<div>Django</div>
-				</div>
-			
-			</div>
-		</div>
-		
-		<div id="Projects" class="container-fluid">
-			<div id="Projects-title-container" class="col-10 offset-md-1">
-				<p id="Projects-title">Featured Projects</p>
-			</div>
-			<div id="Projects-container" class="row">
-				<div id="Projects-container-left" class="col-7 offset-md-1">
-					<p id="Projects-AI-title">Artificial Intelligence</p>
-					
-					<div id="Projects-AI-container" class="row">
-
-						<div id="Projects-AI-atari" class="col-5">
-							<img id="Projects-AI-atari-img" src="img/atari.gif">
-							<div id="Projects-AI-atari-overlay">Atari Tennis Master</div>
-							<!--<p id="Projects-AI-atari-text">Atart 2600-Tennis Master</p>-->
-						</div>
-
-						<div id="Projects-AI-2048" class="col-5  offset-md-1">
-							<img id="Projects-AI-2048-img" src="img/2048.gif">
-							<div id="Projects-AI-2048-overlay">2048 Game AI</div>
-							<!--<p id="Projects-AI-2048-text">2048 Game AI</p>-->
-						</div>
-
-						<div id="Projects-AI-naruto" class="col-5">
-							<img id="Projects-AI-naruto-img" src="img/naruto.png">
-							<div id="Projects-AI-naruto-overlay">Naruto Boruto Classifier</div>
-							<!--<p id="Projects-AI-naruto-text">Naruto Boruto Noruto Baruto</p>-->
-						</div>
-
-						<div id="Projects-AI-mujoco" class="col-5  offset-md-1">
-							<img id="Projects-AI-mujoco-img" src="img/mujoco.gif">
-							<div id="Projects-AI-mujoco-overlay">Mujoco Hopper</div>
-							<!--<p id="Projects-AI-mujoco-text">Mujoco Hopper</p>-->
-						</div>
-
-					</div>
-				</div>
-				<div id="Projects-container-right" class="col-4">
-					<div id="Projects-micro-web-container" class="row">
-
-						<p id="Projects-micro-title">Micro Processor</p>
-						<div id="Projects-micro" class="col-10">
-							<img id="Projects-micro-img" src="img/micro.png">
-							<div id="Projects-micro-overlay">
-								<p>Paper Go!</p>
-								<p>Low-cost Paper Dispenser</p>
-							</div>
-							<!--<p id="Projects-micro-text">Paper Go!</p>-->
-						</div>
-
-						<p id="Projects-web-title">Web Crawling</p>
-						<div id="Projects-web" class="col-10">
-							<img id="Projects-web-img" src="img/web.png">
-							<div id="Projects-web-overlay">
-								<p>Sbuzzify</p>
-								<p>Crawl Musics to Spotify Playlists</p>
-							</div>
-							<!--<p id="Projects-web-text">Sbuzzify</p>-->
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<script type="text/javascript" src="action.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

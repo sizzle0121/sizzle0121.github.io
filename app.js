@@ -1,16 +1,179 @@
-particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#8c8c8c"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#9b9b9b","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"window","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+const controller = new ScrollMagic.Controller();
+var W = window.innerWidth;
 
+// Home
+var PREFIX = "./assets/";
+var slider_bgs = ["slider-bg1.jpg", "slider-bg2.jpg", "slider-bg3.jpg"]
+var canvas = document.getElementsByClassName("Home")[0];
+var show_bg_idx = 0;
+var t1_home = new TimelineMax();
 
-var colorValue = "#8c8c8c";
-var colorSeries = ["#8c8c8c", "#067000", "#FFD306", "#BE77FF", "#FF5809", "#7373B9"];//og, #272727,  #FFA6FF, #84C1FF, #FFF0AC
-var bgSeries = ["#ffffff", "#272727", "#484891", "#FFA6FF", "#ffffff", "#FFF0AC"];
-var currentColor = 0;
-function magic(){
-  if(currentColor+1 < 6) currentColor++;
-  else currentColor = 0;
-  colorValue = colorSeries[currentColor];
-  pJSDom[0].pJS.particles.color.value = colorValue;
-  pJSDom[0].pJS.particles.line_linked.color = colorValue;
-  pJSDom[0].pJS.fn.particlesRefresh();
-  document.getElementById('particles-js').style.backgroundColor = bgSeries[currentColor];
+for(var i = slider_bgs.length-1; i >= 0; i--){
+    var bg = document.createElement("img");
+    var pivot = document.getElementById("bg-slider-container-home");
+    bg.src = PREFIX.concat(slider_bgs[i]);
+    bg.classList.add("bg-in-slider-home");
+    if(i == 0) bg.classList.add("fade-in");
+    if(i == slider_bgs.length - 1){
+        t1_home.to(bg, 1, {y: "15vh"});
+    }
+    else{
+        t1_home.to(bg, 1, {y: "15vh"}, "=-1");
+    }
+    canvas.insertBefore(bg, pivot);
 }
+
+const sceneHome = new ScrollMagic.Scene({
+    triggerElement: ".Home",
+    triggerHook: 0,
+    duration: 1000,
+})
+.setTween(t1_home)
+.addTo(controller);
+
+function slideShow() {
+    show_bg_idx += 1;
+    show_bg_idx %= slider_bgs.length;
+    var bgs = document.getElementsByClassName("bg-in-slider-home");
+    for(var i = 0; i < slider_bgs.length; i++){
+        bgs[i].classList.remove("fade-in");
+    }
+    bgs[slider_bgs.length - 1 - show_bg_idx].classList.add("fade-in");
+}
+setInterval(slideShow, 4000);
+
+
+// About
+var t1 = new TimelineMax();
+
+t1.from( "#title", 1, { opacity: 0, scale: 0 });
+if(W > 1050){
+    t1.to("#title",.5,{top: "7%"});
+    t1.to("#title",.5,{left: "55%",color: "#ffffff",});
+    t1.to("#cover-bg-about", 1, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-1");
+}else if (W <= 1050 && W > 768){
+    t1.to("#title",.5,{top: "7%",});
+    t1.to("#title",.5,{left: "20%", color: "#ffffff"}); 
+    t1.to("#cover-bg-about", 1, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-1");
+}
+else if(W <= 768){
+    t1.to("#title",.5,{top: "7%",});
+    t1.to("#title",.5,{left: "20%", color: "#ffffff"}); 
+    t1.to("#cover-bg-about", 1, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-1");
+}
+
+t1.from( "#intro", .5, { x: -200, opacity: 0}, "=-.5");
+t1.to("#interlude-about", .3, {clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)"}, "=+.3");
+
+const sceneAbout = new ScrollMagic.Scene({
+    triggerElement: ".About",
+    triggerHook: 0,
+    duration: 3000,
+})
+.setPin(".About")
+.setTween(t1)
+.addTo(controller);
+
+
+
+// Experience
+var t1_exp = new TimelineMax();
+t1_exp.from("#title-exp", .7, {opacity: 0, scale: 0});
+if(W > 1050){
+    t1_exp.to("#title-exp", .5, {top: "5%"});
+    t1_exp.to("#title-exp", .5, {left: "15%", color: "#ffffff"});
+    t1_exp.to("#cover-bg-exp", 1, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-1");
+}
+else if(W <= 1050 && W > 768){
+    t1_exp.to("#title-exp", .5, {top: "5%"});
+    t1_exp.to("#title-exp", .5, {left: "25%", color: "#ffffff"});
+    t1_exp.to("#cover-bg-exp", 1, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-1");
+}
+else if(W <= 768){
+    t1_exp.to("#title-exp", .5, {top: "5%"});
+    t1_exp.to("#title-exp", .5, {left: "30%", color: "#ffffff"});
+    t1_exp.to("#cover-bg-exp", 1, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-1");
+}
+var container = document.getElementById("content-exp");
+var container_timeline = document.getElementById("timeline-exp");
+var exps = [
+    {
+        "title": "Teaching Assistant",
+        "location": "@ University of Pennsylvania",
+        "brief": "🎯 TA of CIS 380 Operating Systems",
+        "image": "./assets/upenn-logo.png"
+    },
+    {
+        "title": "Artificial Intelligence Intern",
+        "location": "@ URS Robot Inc.",
+        "brief": "🎯 Pioneered the research of AI in SLAM\n🎯 Developed AI for obstacle avoidance\n🎯 Analyzed sensor data for bump detection",
+        "image": "./assets/ursrobot-logo.png"
+    },
+    {
+        "title": "Undergraduate Researcher",
+        "location": "@ NCTU CGI Lab",
+        "brief": "🎯 Improved DRL algorithm in sparse-reward environment\n🎯 Analyzed actor-critic based DRL on MuJoCo\n🎯 Improved valued-based DRL on Atari Tennis",
+        "image": "./assets/nctu-logo.png"
+    }
+]
+
+for(var i = 0; i < exps.length; i++){
+    // cards
+    var card = document.createElement("div");
+    card.classList.add("card-exp");
+    var content = document.createElement("div");
+    content.classList.add("card-content-exp");
+
+    var title = document.createTextNode(exps[i]["title"]);
+    var title_tag = document.createElement("p");
+    title_tag.classList.add("card-title-exp");
+    title_tag.appendChild(title);
+    content.appendChild(title_tag);
+    var loc = document.createTextNode(exps[i]["location"]);
+    var loc_tag = document.createElement("p");
+    loc_tag.classList.add("card-loc-exp");
+    loc_tag.appendChild(loc);
+    content.appendChild(loc_tag);
+    var brief = document.createTextNode(exps[i]["brief"]);
+    var brief_tag = document.createElement("p");
+    brief_tag.classList.add("card-brief-exp");
+    brief_tag.appendChild(brief);
+    content.appendChild(brief_tag);
+
+    var image = document.createElement("img");
+    image.src = exps[i]["image"];
+    image.classList.add("card-image-exp");
+
+    card.appendChild(content);
+    card.appendChild(image);
+    t1_exp.from(card, .5, {x:-200, opacity: 0}, "=-.1");
+    container.appendChild(card);
+    
+    // timeline
+    var dot = document.createElement("div");
+    dot.classList.add("timeline-dot-exp");
+    // var dot_container = document.createElement("div");
+    // dot_container.classList.add("timeline-dot-container-exp");
+    // dot_container.appendChild(dot);
+    if(i != 0){
+        var line = document.createElement("div");
+        line.classList.add("timeline-line-exp");
+        t1_exp.from(line, .2, {height: 0}, "=-.7");
+        container_timeline.appendChild(line);
+    }
+    t1_exp.from(dot, .2, {opacity: 0}, "=-.5");
+    container_timeline.appendChild(dot);
+}
+
+
+t1_exp.to("#bg-exp", 2, {y: "-10vh"}, "=-1.3");
+
+const sceneExperience = new ScrollMagic.Scene({
+    triggerElement: ".Experience",
+    triggerHook: 0,
+    duration: 3000,
+})
+.setPin(".Experience")
+.setTween(t1_exp)
+.addTo(controller);
+
