@@ -46,53 +46,61 @@ setInterval(slideShow, 4000);
 // About
 var t1 = new TimelineMax();
 
-t1.from( "#title", 1, { opacity: 0, scale: 0 });
+t1.from( "#title", .5, { opacity: 0, scale: 0 });
 if(W > 1050){
-    t1.to("#title",.5,{top: "7%"});
-    t1.to("#title",.5,{left: "55%",color: "#ffffff",});
-    t1.to("#cover-bg-about", 1, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-1");
+    t1.to("#title",.3,{top: "7%"});
+    t1.to("#title",.3,{left: "55%",color: "#ffffff",});
+    t1.to("#cover-bg-about", .5, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-.6");
 }else if (W <= 1050 && W > 768){
-    t1.to("#title",.5,{top: "7%",});
-    t1.to("#title",.5,{left: "20%", color: "#ffffff"}); 
-    t1.to("#cover-bg-about", 1, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-1");
+    t1.to("#title",.3,{top: "7%",});
+    t1.to("#title",.3,{left: "20%", color: "#ffffff"}); 
+    t1.to("#cover-bg-about", .5, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-.6");
 }
 else if(W <= 768){
-    t1.to("#title",.5,{top: "7%",});
-    t1.to("#title",.5,{left: "20%", color: "#ffffff"}); 
-    t1.to("#cover-bg-about", 1, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-1");
+    t1.to("#title",.3,{top: "7%",});
+    t1.to("#title",.3,{left: "20%", color: "#ffffff"}); 
+    t1.to("#cover-bg-about", .5, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-.6");
 }
 
 t1.from( "#intro", .5, { x: -200, opacity: 0}, "=-.5");
-t1.to("#interlude-about", .3, {clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)"}, "=+.3");
+// t1.to("#interlude-about", .3, {clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)"}, "=+.3");
 
 const sceneAbout = new ScrollMagic.Scene({
     triggerElement: ".About",
     triggerHook: 0,
-    duration: 3000,
+    duration: 700,
 })
 .setPin(".About")
 .setTween(t1)
 .addTo(controller);
 
-
+var t2_about = new TimelineMax();
+t2_about.to(".About", .5, {y: "50vh"});
+const sceneAbout2 = new ScrollMagic.Scene({
+    triggerElement: ".Experience",
+    triggerHook: 1,
+    duration: "100%",
+})
+.setTween(t2_about)
+.addTo(controller);
 
 // Experience
 var t1_exp = new TimelineMax();
-t1_exp.from("#title-exp", .7, {opacity: 0, scale: 0});
+t1_exp.from("#title-exp", .5, {opacity: 0, scale: 0});
 if(W > 1050){
-    t1_exp.to("#title-exp", .5, {top: "5%"});
-    t1_exp.to("#title-exp", .5, {left: "15%", color: "#ffffff"});
-    t1_exp.to("#cover-bg-exp", 1, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-1");
+    t1_exp.to("#title-exp", .1, {top: "5%"});
+    t1_exp.to("#title-exp", .1, {left: "15%", color: "#ffffff"});
+    t1_exp.to("#cover-bg-exp", .3, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-.2");
 }
 else if(W <= 1050 && W > 768){
-    t1_exp.to("#title-exp", .5, {top: "5%"});
-    t1_exp.to("#title-exp", .5, {left: "25%", color: "#ffffff"});
-    t1_exp.to("#cover-bg-exp", 1, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-1");
+    t1_exp.to("#title-exp", .1, {top: "5%"});
+    t1_exp.to("#title-exp", .1, {left: "25%", color: "#ffffff"});
+    t1_exp.to("#cover-bg-exp",.3, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-.2");
 }
 else if(W <= 768){
-    t1_exp.to("#title-exp", .5, {top: "5%"});
-    t1_exp.to("#title-exp", .5, {left: "30%", color: "#ffffff"});
-    t1_exp.to("#cover-bg-exp", 1, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-1");
+    t1_exp.to("#title-exp", .1, {top: "5%"});
+    t1_exp.to("#title-exp", .1, {left: "30%", color: "#ffffff"});
+    t1_exp.to("#cover-bg-exp", .3, {clipPath: "polygon(0 0, 0% 0, 0% 100%, 0 100%)"}, "=-.2");
 }
 var container = document.getElementById("content-exp");
 var container_timeline = document.getElementById("timeline-exp");
@@ -146,7 +154,7 @@ for(var i = 0; i < exps.length; i++){
 
     card.appendChild(content);
     card.appendChild(image);
-    t1_exp.from(card, .5, {x:-200, opacity: 0}, "=-.1");
+    t1_exp.from(card, .2, {x:-200, opacity: 0}, "=-.1");
     container.appendChild(card);
     
     // timeline
@@ -158,10 +166,10 @@ for(var i = 0; i < exps.length; i++){
     if(i != 0){
         var line = document.createElement("div");
         line.classList.add("timeline-line-exp");
-        t1_exp.from(line, .2, {height: 0}, "=-.7");
+        t1_exp.from(line, .05, {height: 0}, "=-.25");
         container_timeline.appendChild(line);
     }
-    t1_exp.from(dot, .2, {opacity: 0}, "=-.5");
+    t1_exp.from(dot, .05, {opacity: 0}, "=-.2");
     container_timeline.appendChild(dot);
 }
 
@@ -171,9 +179,145 @@ t1_exp.to("#bg-exp", 2, {y: "-10vh"}, "=-1.3");
 const sceneExperience = new ScrollMagic.Scene({
     triggerElement: ".Experience",
     triggerHook: 0,
-    duration: 3000,
+    duration: 1500,
 })
 .setPin(".Experience")
 .setTween(t1_exp)
 .addTo(controller);
+
+var t2_exp = new TimelineMax();
+t2_exp.to(".Experience", .5, {y: "50vh"});
+const sceneExperience2 = new ScrollMagic.Scene({
+    triggerElement: ".Projects",
+    triggerHook: 1,
+    duration: 1000,
+})
+.setTween(t2_exp)
+.addTo(controller);
+
+// Projects
+var t1_pj = new TimelineMax();
+if(W > 1050){
+    t1_pj.from("#title-pj", .5, {opacity: 0, scale: 0});
+    t1_pj.to("#title-pj", .1, {top: "5%"});
+    t1_pj.to("#title-pj", .1, {left: "50%", color: "#ffffff"});
+    t1_pj.to("#cover-bg-pj", .3, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-.2");
+}
+else if(W <= 1050 && W > 768){
+    t1_pj.from("#title-pj", .5, {opacity: 0, scale: 0});
+    t1_pj.to("#title-pj", .1, {top: "5%"});
+    t1_pj.to("#title-pj", .1, {left: "50%", color: "#ffffff"});
+    t1_pj.to("#cover-bg-pj", .3, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-.2");
+}
+else if(W <= 768){
+    t1_pj.from("#title-pj", .5, {opacity: 0, scale: 0});
+    t1_pj.to("#title-pj", .1, {top: "5%"});
+    t1_pj.to("#title-pj", .1, {left: "50%", color: "#ffffff"});
+    t1_pj.to("#cover-bg-pj", .3, {clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}, "=-.2");
+}
+var pjs = [
+    {
+        "title": "Atari Tennis Master",
+        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~",
+        "image": "atari-tennis.png",
+        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+    },
+    {
+        "title": "Deep Flappy Bird",
+        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hellollo~hello~hello~hello~hello~hello~hello~",
+        "image": "flappy-bird.png",
+        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+    },
+    {
+        "title": "RL in 2048 Game",
+        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hellollo~hello~hello~hello~hello~hello~hello~",
+        "image": "2048.png",
+        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+    },
+    {
+        "title": "Naruto Boruto Noruto Baruto",
+        "brief": "hello~hello~hello~hello~hello~hello~hello~",
+        "image": "naruto.png",
+        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+    },
+    {
+        "title": "DRL in MuJoCo Hopper",
+        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hellollo~hello~hello~hello~hello~hello~hello~",
+        "image": "mujoco.jpeg",
+        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+    }
+]
+var container_pj = document.getElementById("container-pj");
+for(var i = 0; i < pjs.length; i++){
+    var new_card = document.createElement("div");
+    if((i + 1) % 2 == 1){ // odd card
+        new_card.classList.add("card-pj-odd");
+        if(W > 1050){
+            if(i == 0) t1_pj.from(new_card, .2, {x: -200, opacity: 0});
+            else  t1_pj.from(new_card, .2, {x: -200, opacity: 0}, "=+.5");
+        }
+        else if(W <= 1050 && W > 768){
+            if(i == 0) t1_pj.from(new_card, .5, {x: -200, opacity: 0}, "=+1");
+            else  t1_pj.from(new_card, .5, {x: -200, opacity: 0}, "=+1");
+        }
+        else if(W <= 768){
+            if(i == 0) t1_pj.from(new_card, .2, {x: -200, opacity: 0});
+            else  t1_pj.from(new_card, .2, {x: -200, opacity: 0}, "=+.5");
+        }
+    }
+    else{ // even card
+        new_card.classList.add("card-pj-even");
+        if(W > 1050){
+            if(i == 1) t1_pj.from(new_card, .2, {x: 200, opacity: 0});
+            else  t1_pj.from(new_card, .2, {x: 200, opacity: 0}, "=+.5");
+        }
+        else if(W <= 1050 && W > 768){
+            if(i == 1) t1_pj.from(new_card, .5, {x: 200, opacity: 0}, "=+2");
+            else  t1_pj.from(new_card, .5, {x: 200, opacity: 0}, "=+2");
+        }
+        else if(W <= 768){
+            if(i == 1) t1_pj.from(new_card, .2, {x: 200, opacity: 0});
+            else  t1_pj.from(new_card, .2, {x: 200, opacity: 0}, "=+.5");
+        }
+    }
+    var card_bg = document.createElement("img");
+    card_bg.src = PREFIX.concat(pjs[i]["image"]);
+    card_bg.classList.add("card-pj-bg");
+    new_card.appendChild(card_bg);
+
+    var card_title = document.createElement("p");
+    var title = document.createTextNode(pjs[i]["title"]);
+    card_title.appendChild(title);
+    card_title.classList.add("card-pj-title");
+    new_card.appendChild(card_title);
+
+    var card_brief = document.createElement("p");
+    var brief = document.createTextNode(pjs[i]["brief"]);
+    card_brief.appendChild(brief);
+    card_brief.classList.add("card-pj-brief");
+	var card_brief_container = document.createElement("div");
+	card_brief_container.classList.add("card-pj-brief-container");
+    card_brief_container.appendChild(card_brief);
+    new_card.appendChild(card_brief_container);
+
+    container_pj.appendChild(new_card);
+}
+var du = 2500, hook = 0.9;
+if(W <= 1050 && W > 768){
+    du = 4500;
+    hook = 0.8;
+}
+else if(W <= 768){
+    du = 3000;
+    hook = 0.7;
+}
+const sceneProjects = new ScrollMagic.Scene({
+    triggerElement: ".Projects",
+    triggerHook: hook,
+    duration: du,
+})
+.setTween(t1_pj)
+.addTo(controller);
+
+
 
