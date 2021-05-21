@@ -218,31 +218,31 @@ else if(W <= 768){
 var pjs = [
     {
         "title": "Atari Tennis Master",
-        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~",
+        "brief": "Play Atari Tennis with over 18.0 rewards on average by value-based Deep Reinforecment Learning Algorithm",
         "image": "atari-tennis.png",
         "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
     },
     {
         "title": "Deep Flappy Bird",
-        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hellollo~hello~hello~hello~hello~hello~hello~",
+        "brief": "Play Flappy Bird with over 2000 scores by improving the exploration method of Deep Q Networks, featured with the support of training on AWS EC2, AWS SageMaker, Google Cloud Platform ComputeEngine and Google Colab",
         "image": "flappy-bird.png",
-        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning", "AWS", "GCP"]
     },
     {
         "title": "RL in 2048 Game",
-        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hellollo~hello~hello~hello~hello~hello~hello~",
+        "brief": "A 2048 game agent with the performance of reaching the 8192 tile in the game using Temporal Difference Learning with N-tuple Network for extracting features of the board",
         "image": "2048.png",
-        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+        "tags": ["C++", "Python", "Reinforcement Learning", "Game Theory"]
     },
     {
         "title": "Naruto Boruto Noruto Baruto",
-        "brief": "hello~hello~hello~hello~hello~hello~hello~",
+        "brief": "Classify two japanese animes, Naruto and Boruto, whose creators have mentorship and share the same characters in their comics. Experiment with 4 different models (ResNet, CNN without shortcut, ResNet + Decision Tree, ResNet + SVM), and the best one achieve 94% accuracy",
         "image": "naruto.png",
-        "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
+        "tags": ["Python", "Pytorch", "Deep Learning"]
     },
     {
         "title": "DRL in MuJoCo Hopper",
-        "brief": "hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hello~hellollo~hello~hello~hello~hello~hello~hello~",
+        "brief": "Control MuJoCo Hopper using Deep Deterministic Policy Gradient (DDPG) and achieve 200 rewards on average",
         "image": "mujoco.jpeg",
         "tags": ["Python", "Pytorch", "Deep Reinforcement Learning"]
     }
@@ -253,8 +253,8 @@ for(var i = 0; i < pjs.length; i++){
     if((i + 1) % 2 == 1){ // odd card
         new_card.classList.add("card-pj-odd");
         if(W > 1050){
-            if(i == 0) t1_pj.from(new_card, .2, {x: -200, opacity: 0});
-            else  t1_pj.from(new_card, .2, {x: -200, opacity: 0}, "=+.5");
+            if(i == 0) t1_pj.from(new_card, .3, {x: -200, opacity: 0});
+            else  t1_pj.from(new_card, .3, {x: -200, opacity: 0});
         }
         else if(W <= 1050 && W > 768){
             if(i == 0) t1_pj.from(new_card, .5, {x: -200, opacity: 0}, "=+1");
@@ -268,8 +268,8 @@ for(var i = 0; i < pjs.length; i++){
     else{ // even card
         new_card.classList.add("card-pj-even");
         if(W > 1050){
-            if(i == 1) t1_pj.from(new_card, .2, {x: 200, opacity: 0});
-            else  t1_pj.from(new_card, .2, {x: 200, opacity: 0}, "=+.5");
+            if(i == 1) t1_pj.from(new_card, .3, {x: 200, opacity: 0}, "=-.2");
+            else  t1_pj.from(new_card, .3, {x: 200, opacity: 0});
         }
         else if(W <= 1050 && W > 768){
             if(i == 1) t1_pj.from(new_card, .5, {x: 200, opacity: 0}, "=+2");
@@ -302,8 +302,12 @@ for(var i = 0; i < pjs.length; i++){
 
     container_pj.appendChild(new_card);
 }
-var du = 2500, hook = 0.9;
-if(W <= 1050 && W > 768){
+var du = 2400, hook = 1;
+if(W <= 1600 && W > 1050){
+    du = 2000;
+    hook = 1;
+}
+else if(W <= 1050 && W > 768){
     du = 4500;
     hook = 0.8;
 }
